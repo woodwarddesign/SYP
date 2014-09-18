@@ -1,0 +1,355 @@
+// menu styles
+
+ul li.leaf,
+ul li.leaf {
+  list-style: none;
+}
+
+.menu {
+  margin-bottom: 0;
+}
+
+.menu li a {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+.main-menu-1 {
+  text-align: left;
+  .menu {
+    float: left;
+    list-style: none;
+    margin-bottom: 0;
+  }
+}
+
+.js .main-menu-1 {
+  max-height: 0;
+  overflow: hidden;
+  &.toggled {
+    max-height: 50em;
+    border-top: 1px solid $white;
+  }
+  &.main-menu-2 {
+    width: 200%;
+  }
+}
+
+// multi-toggle styles
+
+a.menu-link {
+  background: url('../images/menu-icon.svg') no-repeat scroll 10px 1.1em $red;
+  color: $white !important;
+  display: block;
+  float: right;
+  padding: .87em .5em .87em 40px;
+  max-height: 50px;
+  @include breakpoint($tab) {
+	  padding: .73em .5em .73em 40px;	  
+  }
+}
+
+.main-menu-1 {
+  background: $red;
+  clear: both;
+  width: 100%;
+  ul {
+    clear: both;
+  }
+}
+
+.main-menu-1 li.expanded > a:after {
+	content: '+';
+	position: absolute;
+	top: -15px;
+	right: 0;
+	display: block;
+	font-size: 1.5em;
+	padding: 0.25em 0.5em;
+}
+
+.main-menu-1 li.expanded > a.toggled:after {
+  content: "-";
+  top: -16px;
+  right: 2px;
+}
+
+.main-menu-1 li {
+  clear: both;
+  display: block;
+  padding: .75em 20px;
+	border-bottom: 1px solid $white;
+//	&:last-child {
+//		border-bottom: none;
+//	}
+}
+
+.main-menu-1 > li a {
+  &:hover {
+	  color: $white;
+  }
+}
+
+.main-menu-1 li a,
+a.menu-link {
+  color: $white;
+  font-family: $header-font-family;
+  font-weight: 100;
+  @include breakpoint($desk) {
+	  color: $black;
+  }
+}
+
+.main-menu-1 li a:hover,
+.main-menu-1 li a:focus,
+.main-menu-1 li a.toggled {
+  color: $white;
+  outline: none;
+}
+
+.main-menu-1 li a.toggled {
+	margin-bottom: 5px;
+}
+
+footer .region-footer p a:hover,
+footer .region-footer p a:focus,
+footer .region-footer p a.toggled {
+	  color: darken($link-color, 30%);
+}
+
+.main-menu-1 li ul  {
+  background: darken($red, 10%);
+  clear: both;
+  list-style: none;
+  left: 20px;
+  margin-bottom: 0;
+  opacity: 1;
+  top: 35px;
+  @include trans-all;
+  li {
+    padding: .75rem .75rem .75rem 2rem;
+    list-style: none;
+    width: 200%;
+//    &:last-child {
+//      border-bottom: none;
+//    }
+  }
+  @include breakpoint($desk) {
+    background: $base-color;
+  }
+}
+
+.main-menu-2 {
+  margin: .5em -20px -1em -100px;
+  max-height: 50em;
+  padding-left: 80px;
+  padding-right: 150px;
+  width: 150%;
+}
+
+.js .main-menu-2 {
+  max-height: 0;
+  overflow: hidden;
+  @include trans-all;
+  &.toggled {
+  	border-top: 1px solid $white;
+    max-height: 50em;
+    margin-bottom: 0;
+  }
+}
+
+// footer 
+
+footer {
+	.menu {
+		margin-bottom: 15px;
+		font-size: .85em;
+		li {
+			@include breakpoint($desk + 10em) {
+				display: inline-block;
+				padding: 0 .75em 0 .5em;
+				border: none;
+				border-right: 1px solid $white;
+				
+				&:last-child {
+					border-right: none;
+				}
+			}
+			a {
+				color: $white;
+				&:hover {
+					color: $black;
+				}
+			}
+			padding: .25em 0;
+			border-bottom: 1px solid darken($red, 10%);
+			border-top: 1px solid lighten($red, 10%);
+			text-align: center;
+			&:first-child {
+				border-top: none;
+			}
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+	}
+}
+
+
+@include breakpoint($desk) {
+
+  	.main-menu-1 {
+  		text-align: right;
+  	}
+
+  .js .main-menu-1 {
+    background-color: $white;
+    max-height: none;
+    overflow: visible;
+    z-index: 1000;
+  }
+
+    .main-menu-1 {
+      margin-top: 0;
+    }
+
+  .main-menu-1 li.expanded > a:after {
+    content: '';
+  }
+
+  .main-menu-1 li.expanded > a.toggled:after {
+    content: '';
+  }
+
+  .main-menu-1 li.expanded > a:after {
+    content: '';
+  }
+
+  .main-menu-1 li.expanded {
+    padding-bottom: .8em;
+  }
+
+  .main-menu-1 li  {
+    border-top: none;
+    padding: .8em 1em;
+  }
+
+  .main-menu-1 > ul li  {
+    &.first {
+      padding-left: 0;
+    }
+    &.last {
+      border-right: none;
+      padding-right: 0;
+    }
+  }
+
+  .main-menu-1 li {
+    display: inline-block;
+    font-size: $base-font-size * .85;
+    position: relative;
+    font-weight: 300;
+    border-left: 1px solid $light-gray;
+    border-bottom: none;
+    margin-right: -5px;
+    li {
+	    border-left: none;
+	    &:hover {
+		    background-color: none;
+	    }
+    }
+    &:hover {
+	    background-color: $red;
+    }
+  }
+
+  a.menu-link {
+      display: none;
+  }
+
+  .main-menu-1 ul {
+    display: none;
+  }
+
+  .main-menu-1 li:hover > ul {
+    display: block;
+  }
+	
+	.menu-block-wrapper {
+		border-right: 1px solid $border;
+	}
+
+  .js .main-menu-1 .main-menu-2  {
+    border: 1px solid $border;
+    left: 5.89em;
+    max-height: 50em;
+		position: absolute;
+		top: 2.6rem;
+		text-align: left;
+		width: 12em;
+		line-height: 0;
+		@include trans-all;
+
+		&:hover {
+			border-color: $red;	
+//			background-color: $red;				
+		}
+
+    li {
+      border-right: none;
+      display: inline-block;
+      margin-left: -4.75em;
+      overflow: hidden;
+      padding-left: .75em;
+      position: relative;
+      width: 15.2em;
+      a {
+        display: block;
+				padding: .5em .15em;
+      }
+    }
+	}
+	footer {
+		.copyright {
+			text-align: right;
+		}
+	}
+
+} //end media query
+
+
+.region-sidebar-first .menu li,
+.region-sidebar-second .menu li  {
+  border-bottom: 1px solid $light-gray;
+  margin-bottom: .5em;
+  padding-bottom: .5em;
+  padding-top: 0;
+  &.last {
+    border: none;
+  }
+}
+
+// node edit menu styles
+
+ul.primary {
+  border-bottom: 1px solid $dark-gray;
+   li {
+    display: inline-block;
+    list-style: none;
+    background-color: $gray;
+    border-color: $dark-gray;
+    border-style: solid solid none solid;
+    border-width: 1px;
+    height: auto;
+    margin-right: 0.5em;
+    padding: 0 1em;
+    a {
+
+      text-decoration: none;
+    }
+    &.toggled {
+      background-color: $white;
+    }
+  }
+}

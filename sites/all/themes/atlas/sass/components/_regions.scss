@@ -1,0 +1,189 @@
+// header
+.header-wrapper,
+.preface-wrapper {
+  width: 100%;
+}
+
+.admin-menu {
+	.header-wrapper	{
+		margin-top: 1.75rem;
+	}
+}
+
+.header-wrapper {
+  padding: 0rem;
+  background-color: $red;
+  border-top: 4px solid $red;
+  border-bottom: 1px solid $border;
+  margin-bottom: $vert-spacing;
+  position: relative;
+  z-index: 2;
+  @include breakpoint($desk) {
+	  background-color: $white;
+  }
+  
+  a {
+	  color: $black;
+	  &:hover,
+	  &:active {
+		  color: $white;
+	  }
+  }
+  .site-name {
+	  display: none;
+	  @include breakpoint($tab) {
+		  display: block;
+	  }
+  }
+}
+
+.header.grid-container {
+	max-width: 100%;
+}
+
+img.header__logo-image {
+  height: 50px;
+}
+
+.header__logo-image {
+  float: left;
+  height: auto;
+  margin-right: 1em;
+  position: relative;
+}
+
+.header__name-and-slogan {
+  float: left;
+ }
+
+.region-branding {
+  float: left;
+  overflow: hidden;
+  padding-bottom: 0rem;
+  position: relative;
+}
+
+.region-menu {
+	margin-top: -50px;
+	@include breakpoint($desk) {
+		margin-top: 0;
+	}
+}
+
+// preface region
+
+.preface-wrapper {
+	margin-top: -2em;
+	margin-bottom: 2em;
+	position: relative;
+	z-index: 1;
+	
+	.feature-image {
+		img {
+			max-width: none;
+			width: 100%;
+		}
+	}
+	
+	:after {
+		@include clear-it;
+	}
+}
+
+
+// Ads region
+
+
+
+// content region
+
+#main {
+	background: url('../images/staff-bg.jpg') -480px 0px no-repeat scroll;
+}
+
+#content {
+  overflow: hidden;
+}
+
+#content .messages {
+  margin-bottom: $vert-spacing * .5;
+  padding: 20px;
+  &.status {
+    background: $info;
+    border: 1px solid darken($info, 20%);
+  }
+}
+
+.breadcrumb {
+  li {
+    display: inline-block;
+    list-style: none;
+    padding: 2rem 0;
+    font-family: $sans;
+    font-size: $base-font-size * .725;
+  }
+}
+
+// postscript region
+
+
+// footer region
+
+footer {
+  clear: both;
+  background-color: $dark-gray;
+	
+	.top {
+		h2, h3, h4, h5, h6, p {
+			color: white;
+		}
+		padding-bottom: 0;
+	}
+	
+  a {
+	  color: $white;
+	  &:hover {
+		  color: $red;
+	  }
+  }
+}
+
+.footer-bottom {
+	background-color: $red;
+
+	.grid-container {
+		max-width: 100%;
+		padding-bottom: 0;
+	}
+
+	@include breakpoint($desk + 10em) {
+		#block-menu-menu-footer-menu,
+		.copyright {
+			width: 35%;
+			float: left;
+			
+			&:after {
+				@include clear-it;
+			}
+		}
+		#block-menu-menu-footer-menu {
+			width: 65%;
+		}
+	}
+}
+
+
+
+.region-footer {
+  padding: 15px 0 10px;
+}
+
+.copyright {
+  padding-bottom: 10px;
+  width: 100%;
+ 	text-align: center;
+  p {
+    font-size: $base-font-size * .625;
+    margin-bottom: 0;
+  }
+}
